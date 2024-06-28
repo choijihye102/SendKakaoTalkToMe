@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="카카오톡" icon-name="custom:custom63">
+        <div class="slds-m-around_medium">
+            <lightning-button label="카카오톡 로그인 하기" onclick={handleAuth}></lightning-button>
+        </div>
+        <div class="slds-m-around_medium">
+            <lightning-input label="Message" value={message} onchange={handleMessageChange}></lightning-input>
+            <lightning-button label="내게 메세지 보내기" onclick={handleSendMessage}></lightning-button>
+        </div>
+    </lightning-card>
+</template>

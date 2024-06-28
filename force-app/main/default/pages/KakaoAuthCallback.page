@@ -1,0 +1,27 @@
+<apex:page controller="KakaoAuth">
+<apex:includeScript value="/soap/ajax/41.0/connection.js"/>
+<apex:includeScript value="/soap/ajax/41.0/apex.js"/>   
+    <script>   // URL에서 authorization code를 추출.
+        var params = new URLSearchParams(window.location.search);
+        var authCodeValue = params.get('code');
+        console.log('VF : console.log(authCode)');
+
+        if (authCodeValue) {
+            KakaoAuth.receiveAuthCode(authCodeValue, function(result, event) {
+                if (event.status) {
+                    window.location.href = 'https://hiho2-dev-ed.lightning.force.com/lightning/n/AgaintwoKAKAO';
+                    console.log('Authorization code sent to Apex successfully.');
+                    
+                } else {
+                    console.error('Error sending authorization code to Apex:', event.message);
+                }
+            });
+        } else {
+            console.error('Authorization code not found in URL.');
+            
+        }</script>
+
+ 
+</apex:page>
+
+
