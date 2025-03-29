@@ -64,7 +64,7 @@ Salesforce 플랫폼에서 **APEX**와 **LWC (Lightning Web Components)**를 활
 
 ## 📤 메시지 샘플
 
-```json
+json
 {
   "template_object": {
     "object_type": "text",
